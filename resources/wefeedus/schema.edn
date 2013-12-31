@@ -1,0 +1,51 @@
+[
+ {:db/id #db/id[:db.part/db]
+  :db/ident :wefeedus/lon
+  :db/valueType :db.type/double
+  :db/cardinality :db.cardinality/one
+  :db/doc "Lon for geo-marker for a meal."
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :wefeedus/lat
+  :db/valueType :db.type/double
+  :db/cardinality :db.cardinality/one
+  :db/doc "Lat for geo-marker for a meal."
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :wefeedus/starting-minute
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Beginning of availability of meal."
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :wefeedus/end-minute
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Ending of availability of meal."
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :wefeedus/date
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db/doc "Date, time on day irrelevant atm."
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db -1]
+  :db/ident :wefeedus/type
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "Type: soup, meal, cake."
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/user -2]
+  :db/ident :wefeedus.type/soup}
+
+ {:db/id #db/id[:db.part/user -3]
+  :db/ident :wefeedus.type/meal}
+
+ {:db/id #db/id[:db.part/user -4]
+  :db/ident :wefeedus.type/cake}]
