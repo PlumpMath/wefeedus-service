@@ -32,7 +32,9 @@ The client-side (browser) part can be found [here](http://github.com/ghubber/wef
 
 ## Usage
 
-The service wires WebSockets to Datomic atm., but doesn't yet do much
+Run  `lein run` to start the websocket service.
+
+The service wires web-sockets to Datomic atm., but doesn't yet do much
 except storing markers.
 
 ## License

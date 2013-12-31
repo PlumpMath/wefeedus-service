@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [lamina "0.5.0"]
                  [aleph "0.3.1"]
-                 [com.datomic/datomic-free "0.8.3826"]])
+                 [com.datomic/datomic-free "0.9.4384"]]
+  :main wefeedus-service.core)

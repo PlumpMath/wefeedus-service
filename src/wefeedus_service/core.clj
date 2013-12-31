@@ -1,4 +1,5 @@
 (ns wefeedus-service.core
+  (:gen-class)
   (:use [lamina.core :refer [enqueue channel receive-all]]
         [aleph.http :refer [start-http-server]])
   (:require [datomic.api :as d :refer (q)]))
@@ -63,6 +64,8 @@
       :add-marker (add-marker (:value msg))
       (println "no dispatch value for" msg))))
 
+(def port 9123)
+
 (defn start-server!
   "Starts a listening server applying dispatch-fn
    to all messages on each connection channel.
@@ -75,9 +78,14 @@
      (enqueue ch (str {:io.pedestal.app.messages/type :load-markers
                        :io.pedestal.app.messages/topic [:markers]
                        :markers (map db->marker (get-all-markers))})))
-   {:port 9123
+   {:port port
     :websocket true}))
 
-(def server (start-server!))
 
+(defn -main [& args]
+  (println "Starting websocket service on port" port)
+  (def server (start-server!)))
+
+
+#_(def server (start-server!))
 #_(server)
